@@ -1,0 +1,33 @@
+{
+  "name": "multistep-checkout",
+  "version": "1.0.0",
+  "description": "hrsf131 mini app sprint",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "./node_modules/.bin/babel client --out-dir public --presets @babel/preset-react --source-maps inline --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shortdaddy0711/multistep-checkout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shortdaddy0711/multistep-checkout/issues"
+  },
+  "homepage": "https://github.com/shortdaddy0711/multistep-checkout#readme",
+  "dependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "axios": "^0.21.0",
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
