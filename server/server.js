@@ -18,10 +18,7 @@ const PORT = 3000;
 app.use(express.static('public'))
 app.use(parser.json());
 
-app.get('/account', (req, res) => {
-  let data = req.body;
-  res.json(data);
-})
+app.get('/account', controllers.getOne.get);
 
 app.post('/create', controllers.create.post);
 app.post('/updatesForm1', controllers.updatesForm1.post);

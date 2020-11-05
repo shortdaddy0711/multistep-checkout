@@ -70,8 +70,8 @@ module.exports = {
           "billzip": req.body.billzip
         }
       };
-      const options = { returnNewDocument: true };
-      db.Checkout.findOneAndUpdate(query, update, options)
+      // const options = { returnNewDocument: true };
+      db.Checkout.findOneAndUpdate(query, update)
       .then(updatedDocument => {
         if(updatedDocument) {
           console.log(`Successfully updated document: ${updatedDocument}.`)
@@ -80,6 +80,23 @@ module.exports = {
         }
       })
       .catch(err => console.error(`Failed to find and update document: ${err}`))
+    }
+  },
+  getOne: {
+    get: (req, res) => {
+      const query = {"_id": req.body};
+      console.log('in getOne.get: ', req.body);
+
+      db.Checkout.findOne(query)
+      .then(result => {
+        if(result) {
+          console.log(`Successfully found document: ${result}.`);
+        } else {
+          console.log("No document matches the provided query.");
+        }
+        res.json(result);
+      })
+      .catch(err => console.error(`Failed to find document: ${err}`));
     }
   }
 }

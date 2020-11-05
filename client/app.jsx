@@ -277,47 +277,75 @@ class Confirmation extends React.Component {
     super(props);
     this.state = {
       nextForm: "",
+      account: {}
     };
   }
 
   componentDidMount() {
     this.setState({nextForm: 'Checkout'})
-    axios.get('/account')
-      .then(this.reloadGroceries)
-      .catch((error)=>{console.log(error)})
   }
 
-
-
-
   render() {
+    const data = this.props.data;
     return (
       <div>
         <table>
-        <Table />
-        </table>
-        <form>
-          <div>
+          <tr>
+            <th>name:</th>
+            <td>{data.name}</td>
+          </tr>
+          <tr>
+            <th>email:</th>
+            <td>{data.email}</td>
+          </tr>
+          <tr>
+            <th>password:</th>
+            <td>{data.password}</td>
+          </tr>
+          <tr>
+            <th>address1:</th>
+            <td>{data.line1}</td>
+          </tr>
+          <tr>
+            <th>address2:</th>
+            <td>{data.line1}</td>
+          </tr>
+          <tr>
+            <th>city:</th>
+            <th>state:</th>
+            <th>zip code:</th>
+          </tr>
+          <tr>
+            <td>{data.city}</td>
+            <td>{data.state}</td>
+            <td>{data.shipzip}</td>
+          </tr>
+          <tr>
+            <th>card #:</th>
+            <td>{data.cc}</td>
+          </tr>
+          <tr>
+            <th>expiry date:</th>
+            <th>CVV:</th>
+            <th>zip code:</th>
+          </tr>
+          <tr>
+            <td>{data.exp}</td>
+            <td>{data.cvv}</td>
+            <td>{data.billzip}</td>
+          </tr>
+          <tr>
             <button
               className="btn"
               id="confirmation"
               type='button'
               onClick={(e) => this.props.handleSubmit(this.state.nextForm, e)}
             >Purchase</button>
-          </div>
-        </form>
+          </tr>
+        </table>
       </div>
     )
   }
-}
-
-const Table = () => {
-  return (
-    <tr>
-      <td></td>
-      <td></td>
-    </tr>
-  )
 }
 
 

@@ -12,6 +12,12 @@
 }
 
 form {
+  position: relative;
+  left: 50%;
+  margin-top: 40px;
+}
+
+table {
   position: absolute;
   left: 50%;
   margin-top: 40px;
